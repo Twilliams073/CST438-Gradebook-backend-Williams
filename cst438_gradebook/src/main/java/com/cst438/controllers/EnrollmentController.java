@@ -25,6 +25,7 @@ public class EnrollmentController {
 
 	/*
 	 * endpoint used by registration service to add an enrollment to an existing
+	 * test
 	 * course.
 	 */
 	@PostMapping("/enrollment")
