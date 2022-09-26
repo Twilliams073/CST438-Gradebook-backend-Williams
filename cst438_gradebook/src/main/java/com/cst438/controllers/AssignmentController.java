@@ -40,9 +40,9 @@ public class AssignmentController {
 		checkAssignment(assignmentId, email);  // check that user name matches instructor email of the course.
 		
 		Assignment as = assignmentRepository.findById(assignmentId).orElse(null);
-//		if (as == null) {
-//			throw new ResponseStatusException( HttpStatus.BAD_REQUEST, "Invalid grade primary key. "+assignmentId);
-//		}
+		if (as == null) {
+			throw new ResponseStatusException( HttpStatus.BAD_REQUEST, "Invalid grade primary key. "+assignmentId);
+		}
 		assignmentRepository.delete(as);
 		
 		
