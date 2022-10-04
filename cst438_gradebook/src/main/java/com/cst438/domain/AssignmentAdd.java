@@ -5,7 +5,7 @@ import java.sql.Date;
 public class AssignmentAdd {
 	private String assignmentName;
 	private Date dueDate;
-	private String courseId;
+	private int courseId;
 	
 	public String getAssignmentName() {
 		return assignmentName;
@@ -13,7 +13,7 @@ public class AssignmentAdd {
 	public Date getDueDate() {
 		return dueDate;
 	}
-	public String getCourseId() {
+	public int getCourseId() {
 		return courseId;
 	}
 	public void setAssignmentName(String assignmentName) {
@@ -22,7 +22,7 @@ public class AssignmentAdd {
 	public void setDueDate(Date dueDate) {
 		this.dueDate = dueDate;
 	}
-	public void setCourseId(String courseId) {
+	public void setCourseId(int courseId) {
 		this.courseId = courseId;
 	}
 }

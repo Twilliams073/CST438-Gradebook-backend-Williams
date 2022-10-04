@@ -15,6 +15,9 @@ import com.cst438.domain.Assignment;
 import com.cst438.domain.AssignmentAdd;
 import com.cst438.domain.AssignmentListDTO;
 import com.cst438.domain.AssignmentRepository;
+import com.cst438.domain.CourseRepository;
+import com.cst438.domain.Course;
+import com.cst438.domain.CourseDTOG;
 
 @RestController
 @CrossOrigin(origins = {"http://localhost:3000","http://localhost:3001"})
@@ -23,13 +26,18 @@ public class AssignmentController {
 	@Autowired
 	AssignmentRepository assignmentRepository;
 	
+	@Autowired
+	CourseRepository courseRepository;
+	
 	@PostMapping("/assignment")
 	public void addAssignment (@RequestBody AssignmentAdd a) {
+		
+		Course c = courseRepository.findById(a.getCourseId()).orElse(null);
 		
 		Assignment as = new Assignment();
 		as.setName(a.getAssignmentName());
 		as.setDueDate(a.getDueDate());
-		as.setCourse(null);
+		as.setCourse(c);
 		as.setNeedsGrading(1);
 		
 		assignmentRepository.save(as);
