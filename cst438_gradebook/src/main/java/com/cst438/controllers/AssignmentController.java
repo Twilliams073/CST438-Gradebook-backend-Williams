@@ -29,6 +29,8 @@ public class AssignmentController {
 		Assignment as = new Assignment();
 		as.setName(a.getAssignmentName());
 		as.setDueDate(a.getDueDate());
+		as.setCourse(null);
+		as.setNeedsGrading(1);
 		
 		assignmentRepository.save(as);
 	}
